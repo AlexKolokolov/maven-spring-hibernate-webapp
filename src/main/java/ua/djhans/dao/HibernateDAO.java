@@ -30,13 +30,13 @@ public class HibernateDAO implements DAO {
     public List<Book> getBooks(int authorId) {
         Session s = sessionFactory.getCurrentSession();
         Criteria criteria = s.createCriteria(Book.class);
-        if(authorId != 0) criteria.add(Restrictions.eq("writer.id", authorId));
+        if (authorId != 0) criteria.add(Restrictions.eq("writer.id", authorId));
         return criteria.list();
     }
 
     @Transactional
     @Override
-    public  List<Writer> getWriters() {
+    public List<Writer> getWriters() {
         Session s = sessionFactory.getCurrentSession();
         return s.createCriteria(Writer.class).list();
     }

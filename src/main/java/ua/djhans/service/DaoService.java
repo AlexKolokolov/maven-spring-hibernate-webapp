@@ -39,7 +39,10 @@ public class DaoService {
     public static void main(String[] args) {
 
         List<Writer> writers = DaoService.getInstance().getWriters();
-        System.out.println(writers);
+        writers.forEach(System.out::println);
+
+        List<Book> books = DaoService.getInstance().getBooks(0);
+        books.forEach(System.out::println);
     }
 
 }
